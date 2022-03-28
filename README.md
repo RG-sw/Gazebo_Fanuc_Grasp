@@ -16,15 +16,14 @@ ROS/Gazebo simulation of a Fanuc Industrial Robot performing Pick&Place tasks:
 $ cd robot_ws
 $ catkin_make
 ```
-To Run Palletizing simulation (standard boxes) :
+**To Run Palletizing simulation (standard boxes) :**
 ```
 $ roslaunch fanuc_r2000ic_moveit_config palletizzation.launch
 ```
-Or 
 ```
 $ roslaunch fanuc_r2000ic_moveit_config palletizzation_costa.launch
 ```
-To Run OpenCV detetction+PicPlace simulation (standard boxes) :
+**To Run OpenCV detetction + Pick&Place simulation :**
 ```
 $ roslaunch fanuc_r2000ic_moveit_config opencv_palletizzation.launch
 ```
