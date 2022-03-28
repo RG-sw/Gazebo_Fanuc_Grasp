@@ -1,10 +1,38 @@
 # Gazebo_Fanuc_Grasp
-ROS utilities fro Thesis Project
+ROS/Gazebo simulation of a Fanuc Industrial Robot performing Pick&Place tasks:
+- packing boxes
+- OpenCV pipeline to autonomously detect and pick boxes 
 
+## Dependencies
+- ROS Noetic
+- MoveIt! (for Noetic) 
+- Gazebo 11
+- Python 3.8.2
+- OpenCV
+- ros-gazebo, ros-control packages
 
+## Usage
+```
+$ cd robot_ws
+$ catkin_make
+```
+To Run Palletizing simulation (standard boxes) :
+```
+$ roslaunch fanuc_r2000ic_moveit_config palletizzation.launch
+```
+Or 
+```
+$ roslaunch fanuc_r2000ic_moveit_config palletizzation_costa.launch
+```
+To Run OpenCV detetction+PicPlace simulation (standard boxes) :
+```
+$ roslaunch fanuc_r2000ic_moveit_config opencv_palletizzation.launch
+```
 
 ## TODO
 - [ ] Do dockerfile
+
+
 
 # RESOURCES
 - example usage of xacro command (from xacro to urdf file) https://github.com/wrbernardoni/robot_tutorial_1/blob/master/scripts/play.sh
