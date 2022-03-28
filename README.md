@@ -23,10 +23,16 @@ $ roslaunch fanuc_r2000ic_moveit_config palletizzation.launch
 ```
 $ roslaunch fanuc_r2000ic_moveit_config palletizzation_costa.launch
 ```
+
+![costa](https://user-images.githubusercontent.com/94836571/160488501-72ee680d-b331-44f2-a33e-9abfc9708586.gif)
+
+
 **To Run OpenCV detetction + Pick&Place simulation :**
 ```
 $ roslaunch fanuc_r2000ic_moveit_config opencv_palletizzation.launch
 ```
+
+<img src="https://user-images.githubusercontent.com/94836571/160488553-719cf833-3ae9-4b16-8820-0d4bbc835e15.gif" width="420"> | <img src="https://user-images.githubusercontent.com/94836571/160489054-f064d3e8-9e44-41a7-a1ea-ed574ca3e625.gif" width="400">
 
 ## TODO
 - [ ] Do dockerfile
