@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="my_wall">
+    <static>true</static>
+    <link name="wall">
+      <visual name="wall_visual">
+        <pose>-10 0 2.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15 20 5</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>/robot_ws/src/r2000_description/materials/textures</uri>
+            <uri>/robot_ws/src/r2000_description/materials/scripts</uri>
+            <name>Warehouse/Floor</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="wall2">
+      <visual name="wall2_visual">
+        <pose>0 10 2.5 0 0 1.57</pose>
+        <geometry>
+          <box>
+            <size>0.15 20 5</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>/robot_ws/src/r2000_description/materials/textures</uri>
+            <uri>/robot_ws/src/r2000_description/materials/scripts</uri>
+            <name>Warehouse/Floor</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="tmc">
+      <visual name="tmc_visual">
+        <pose>-9.9 0 2.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 5 2.5</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>/robot_ws/src/r2000_description/materials/textures</uri>
+            <uri>/robot_ws/src/r2000_description/materials/scripts</uri>
+            <name>Tmc/Logo</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="tmc2">
+      <visual name="tmc2_visual">
+        <pose>0 9.9 2.5 0 0 1.57</pose>
+        <geometry>
+          <box>
+            <size>0.05 5 2.5</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>/robot_ws/src/r2000_description/materials/textures</uri>
+            <uri>/robot_ws/src/r2000_description/materials/scripts</uri>
+            <name>Tmc/Logo</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

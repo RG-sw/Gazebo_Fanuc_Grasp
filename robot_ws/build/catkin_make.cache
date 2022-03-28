@@ -1,0 +1,2 @@
+fanuc_r2000ic_moveit_config:r2000_commander:r2000_description:r2000_moveit_config
+-DCATKIN_DEVEL_PREFIX=/robot_ws/devel -DCMAKE_INSTALL_PREFIX=/robot_ws/install -G Unix Makefiles

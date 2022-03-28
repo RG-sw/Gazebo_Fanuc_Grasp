@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="Color Tutorial Model">
+    <static>true</static>
+    <link name="square1">
+      <visual name="square1_visual">
+        <pose>0 0 0.01 0 0 0</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>15 15</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>/robot_ws/src/r2000_description/materials/textures</uri>
+            <uri>/robot_ws/src/r2000_description/materials/scripts</uri>
+            <name>Iron/IronFloor</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

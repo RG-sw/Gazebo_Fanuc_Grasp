@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: r2000_description
+    relative_path: urdf/r2000.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/fanuc.srdf
+  CONFIG:
+    author_name: Roberto Gaio
+    author_email: bob.ttravis@gmail.com
+    generated_timestamp: 1642626525

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="paused" default="false"/>
+  <arg name="gazebo_gui" default="true"/>
+  <arg name="initial_joint_positions" doc="Initial joint configuration of the robot"
+       default=" -J joint_1 0 -J joint_2 0 -J joint_3 0 -J joint_4 0 -J joint_5 0 -J joint_6 0 -J left_finger_joint 0 -J right_finger_joint 0"/>
+
+  <!-- startup simulated world -->
+  <include file="/robot_ws/src/gazebo_world/warehouse.launch">
+    <arg name="world_name" default="/robot_ws/src/gazebo_world/warehouse.world"/>
+    <arg name="paused" value="true"/>
+    <arg name="gui" value="$(arg gazebo_gui)"/>
+  </include>
+
+  <!-- send robot urdf to param server -->
+  <param name="robot_description" textfile="$(find r2000_description)/urdf/r2000.urdf" /> 
+
+  <!-- The semantic description that corresponds to the URDF -->
+  <param name="robot_description_semantic" textfile="$(find fanuc_r2000ic_moveit_config)/config/fanuc.srdf" />
+
+
+  <!-- unpause only after loading robot model -->
+  <arg name="unpause" value="$(eval '' if arg('paused') else '-unpause')" />
+  <!-- push robot_description to factory and spawn robot in gazebo at the origin, change x,y,z arguments to spawn in a different position -->
+  <arg name="world_pose" value="-x 0 -y 0 -z 0" />
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot $(arg unpause) $(arg world_pose) $(arg initial_joint_positions)"
+    respawn="false" output="screen" />
+
+  <!-- Load ROS controllers -->
+  <include file="$(dirname)/ros_controllers.launch"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/joint_states" />
+  </node>
+
+  <include file="$(find fanuc_r2000ic_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+  <include file="$(find fanuc_r2000ic_moveit_config)/launch/move_group.launch" />
+  <!--include file="$(find fanuc_r2000ic_moveit_config)/launch/moveit_rviz.launch" /-->
+  <!--node pkg="r2000_commander" name="r2000_pipeline" type="robot_setter.py" output="screen" /-->
+  <node pkg="r2000_commander" name="r2000_pipeline" type="robot_commander.py" output="screen" />
+  <node pkg="r2000_commander" type="spawn_box" name="spawn_box" args="4" />
+
+</launch>
+
+

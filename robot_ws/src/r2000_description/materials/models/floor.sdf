@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="Color Tutorial Model">
+    <static>true</static>
+    <link name="robot_link">
+
+      <visual name="wheel1_visual">
+        <pose>0 0 0.01 0 0 0</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>50 50</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>/robot_ws/src/r2000_description/materials/textures</uri>
+            <uri>/robot_ws/src/r2000_description/materials/scripts</uri>
+            <name>Warehouse/Floor</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

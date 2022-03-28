@@ -1,0 +1,17 @@
+material Iron/IronFloor
+{
+  technique
+  {
+    pass
+    {
+      ambient 1.0 1.0 1.0 1.0
+      diffuse 0.8 0.8 0.8 1.0
+
+      texture_unit
+      {
+        texture /robot_ws/src/r2000_description/materials/textures/RubberMat.png
+        scale 0.3 0.3
+      }
+    }
+  }
+}

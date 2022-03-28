@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="my_box">
+    <link name="my_box">
+      <visual name="box_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.4 0.3 0.2</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>/robot_ws/src/r2000_description/materials/textures</uri>
+            <uri>/robot_ws/src/r2000_description/materials/scripts</uri>
+            <name>Plastic/Wrapper</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="box_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.4 0.3 0.2</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>100</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+              <kp>100000000.0</kp>
+              <kd>1000000.0</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <inertial>
+        <mass> 0.1 </mass>
+        <inertia>  
+          <ixx>0.03</ixx> 
+          <ixy>0.0</ixy>  
+          <ixz>0.0</ixz>  
+          <iyy>0.03</iyy>  
+          <iyz>0.0</iyz>  
+          <izz>0.03</izz> 
+        </inertia>
+      </inertial>
+    </link>
+  </model>
+</sdf>

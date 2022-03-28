@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+
+
+<robot name="simple_box">
+  <link name="my_box">
+    <inertial>
+      <!-- origin xyz="2 0 0" / -->
+      <mass value="0.1" />
+      <inertia  ixx="0.03" ixy="0.0"  ixz="0.0"  iyy="0.03"  iyz="0.0"  izz="0.03" />
+    </inertial>
+    <visual>
+      <!-- origin xyz="2 0 1"/ -->
+      <geometry>
+        <box size="0.3 0.4 0.19" />
+      </geometry>
+    </visual>
+    <collision>
+      <!-- origin xyz="2 0 1"/ -->
+      <geometry>
+        <box size="0.3 0.4 0.19" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="my_box">
+    <material>
+      <script>
+        <uri>/robot_ws/src/r2000_description/media/materials/scripts/plastic.material</uri>
+        <name>Plastic/Wrapper</name>
+      </script>
+    </material>
+    <mu1>100</mu1>
+    <mu2>100</mu2>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <kp>100000000.0</kp>
+    <kd>1000000.0</kd>
+  </gazebo>
+</robot>

@@ -1,0 +1,380 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.4">  
+  <model name="conveyor">
+  <static>true</static>
+    <link name ="world"/>
+    <link name="knife">
+      <pose>0 -0.690 1.505 0 0 -1.57</pose>
+      <collision name="knife_collision">
+        <geometry>
+          <box>
+            <size>0.03 1 0.03</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="knife_visual">
+        <geometry>
+          <box>
+            <size>0.03 1 0.03</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>/robot_ws/src/r2000_description/materials</uri>
+            <uri>/robot_ws/src/r2000_description/materials/scripts</uri>
+            <name>Conveyor/Belt</name>
+          </script>
+        </material>
+      </visual>
+      <sensor name='knife_contact' type='contact'>
+        <contact>
+          <collision>knife_collision</collision>
+        </contact>
+          <plugin name="knife_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>30</updateRate>
+            <bumperTopicName>knife_bumper</bumperTopicName>
+            <frameName>world</frameName>
+          </plugin>
+      </sensor>
+    </link>
+    <link name="belt1">
+      <static>true</static>
+      <pose>0 0 1.5 0 0 0</pose>
+      <collision name="base_link_collision">
+        <geometry>
+          <box>
+            <size>1 12 0.03</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="base_link_visual">
+        <geometry>
+          <box>
+            <size>1 12 0.03</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>/robot_ws/src/r2000_description/materials</uri>
+            <uri>/robot_ws/src/r2000_description/materials/scripts</uri>
+            <name>Conveyor/Belt</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="belt2">
+      <static>true</static>
+      <pose>0 0 1.2 0 0 0</pose>
+      <collision name="base_link_collision">
+        <geometry>
+          <box>
+            <size>1 12 0.03</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="base_link_visual">
+        <geometry>
+          <box>
+            <size>1 12 0.03</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>/robot_ws/src/r2000_description/materials</uri>
+            <uri>/robot_ws/src/r2000_description/materials/scripts</uri>
+            <name>Conveyor/Belt</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="drum1">
+      <static>true</static>
+      <pose>0 6 1.35 1.57079632679 0 1.57079632679</pose>
+      <collision name="drum1_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>1.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="drum1_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>1.2</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint type="fixed" name="drum_joint1">
+      <pose>0 6 0 0 0 0</pose>
+      <parent>belt</parent>
+      <child>drum1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name="drum2">
+      <static>true</static>
+      <pose>0 -6 1.35 1.57079632679 0 1.57079632679</pose>
+      <collision name="drum2_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>1.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="drum2_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>1.2</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint type="fixed" name="drum_joint2">
+      <pose>0 -6 0 0 0 0</pose>
+      <parent>belt</parent>
+      <child>drum2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name="drum3">
+      <static>true</static>
+      <pose>0 0 1.35 1.57079632679 0 1.57079632679</pose>
+      <collision name="drum2_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>1.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="drum2_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>1.2</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="leg1">
+      <static>true</static>
+      <pose>-0.6 0 0.75 0 0 0</pose>
+      <collision name="leg1_collision">
+        <geometry>
+          <box>
+            <size>0.08 0.08 1.35</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="leg1_visual">
+        <geometry>
+          <box>
+            <size>0.08 0.08 1.35</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="leg2">
+      <static>true</static>
+      <pose>0.6 0 0.75 0 0 0</pose>
+      <collision name="leg2_collision">
+        <geometry>
+          <box>
+            <size>0.08 0.08 1.35</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="leg2_visual">
+        <geometry>
+          <box>
+            <size>0.08 0.08 1.35</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="leg3">
+      <static>true</static>
+      <pose>-0.6 6 0.75 0 0 0</pose>
+      <collision name="leg1_collision">
+        <geometry>
+          <box>
+            <size>0.08 0.08 1.35</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="leg1_visual">
+        <geometry>
+          <box>
+            <size>0.08 0.08 1.35</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="leg4">
+      <static>true</static>
+      <pose>0.6 6 0.75 0 0 0</pose>
+      <collision name="leg2_collision">
+        <geometry>
+          <box>
+            <size>0.08 0.08 1.35</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="leg2_visual">
+        <geometry>
+          <box>
+            <size>0.08 0.08 1.35</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="leg5">
+      <static>true</static>
+      <pose>-0.6 -6 0.75 0 0 0</pose>
+      <collision name="leg1_collision">
+        <geometry>
+          <box>
+            <size>0.08 0.08 1.35</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="leg1_visual">
+        <geometry>
+          <box>
+            <size>0.08 0.08 1.35</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="leg6">
+      <static>true</static>
+      <pose>0.6 -6 0.75 0 0 0</pose>
+      <collision name="leg2_collision">
+        <geometry>
+          <box>
+            <size>0.08 0.08 1.35</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="leg2_visual">
+        <geometry>
+          <box>
+            <size>0.08 0.08 1.35</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="base_link">
+      <static>true</static>
+      <pose>0.4 0 0 0 -1.57 0</pose>
+      <collision name="base_collision">
+        <geometry>
+          <polyline>
+            <point>1.5 -6.0</point>
+            <point>0.0 -3.0</point>
+            <point>0.0 3</point>
+            <point>1.5 6.0</point>
+            <point>1.5 -6.0</point>
+            <height>0.8</height>
+          </polyline>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <joint type="fixed" name="base_conveyor_joint">
+      <pose>0 0 1.5 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>belt</child>
+      <axis>
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+  </model>
+</sdf>

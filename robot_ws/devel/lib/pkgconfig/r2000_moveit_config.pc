@@ -1,0 +1,8 @@
+prefix=/robot_ws/devel
+
+Name: r2000_moveit_config
+Description: Description of r2000_moveit_config
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
