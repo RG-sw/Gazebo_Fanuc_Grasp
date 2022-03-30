@@ -32,14 +32,14 @@ $ roslaunch fanuc_r2000ic_moveit_config palletizzation_costa.launch
 $ roslaunch fanuc_r2000ic_moveit_config opencv_palletizzation.launch
 ```
 
-<img src="https://user-images.githubusercontent.com/94836571/160488553-719cf833-3ae9-4b16-8820-0d4bbc835e15.gif" width="420"> | <img src="https://user-images.githubusercontent.com/94836571/160489054-f064d3e8-9e44-41a7-a1ea-ed574ca3e625.gif" width="400">
+<img src="https://user-images.githubusercontent.com/94836571/160488553-719cf833-3ae9-4b16-8820-0d4bbc835e15.gif" width="420">  <img src="https://user-images.githubusercontent.com/94836571/160489054-f064d3e8-9e44-41a7-a1ea-ed574ca3e625.gif" width="400">
 
 ## TODO
 - [ ] Do dockerfile
 
 
 
-# RESOURCES
+## RESOURCES
 - example usage of xacro command (from xacro to urdf file) https://github.com/wrbernardoni/robot_tutorial_1/blob/master/scripts/play.sh
 - passing params to xacro in launch https://answers.ros.org/question/38956/pass-parameters-to-xacro-in-launch-file/
 - spawn xacro in gazebo https://answers.ros.org/question/70417/how-to-spawn-urdfxacro-file-into-gazebo/
@@ -68,18 +68,12 @@ https://github.com/Kinovarobotics/kinova-ros/issues/157
 - Erdal's Blog (Gazebo integration) https://erdalpekel.de/
 - Robotic Seabass (Docker..Jenkins..) https://roboticseabass.com/
 - Mike Moore (Docker, Jupyter) http://moore-mike.com/index.html
-- ETH course Autonomous Mobility on Demand: From Car to Fleet https://idsc.ethz.ch/education/lectures/duckietown.html
-- ETH duckietown https://www.duckietown.org/instructors/classes/educational-resources
 - Blog with ROS/Gazebo Integration https://www.codenong.com/cs110953023/
 
 ## Thesis & Papers
 - Robotic arm pick-and-place tasks https://webthesis.biblio.polito.it/16766/1/tesi.pdf
 - A ROS-based Workspace Control and Trajectory Planner for a Seven Degrees Of Freedom Robotic Arm https://amslaurea.unibo.it/10919/1/Alessandro_Santoni_Thesis_(abstract_ITA).pdf
 - NAVIGATION AND GRASPING WITH A MOBILE MANIPULATOR: FROM SIMULATION TO EXPERIMENTAL RESULTS http://tesi.cab.unipd.it/62262/1/matteo_iovino_tesi.pdf
-- Simultaneous localization and mapping: part I https://ieeexplore.ieee.org/document/1638022
-- Davide Scaramuzza Zurich PHD https://ieeexplore.ieee.org/author/37397688400
-- IEEE Robotics & Automation Magazine https://ieeexplore.ieee.org/xpl/topAccessedArticles.jsp?punumber=100
-- artificial intelligence in robotic palletization https://scholar.google.it/scholar?start=10&q=artificial+intelligence+in+robotic+palletization&hl=it&as_sdt=0,5&as_vis=1
 - Goole's RL https://github.com/google-research/ravens/tree/master/ravens
 - UR5 OpenCV pickplace https://github.com/lihuang3/ur5_ROS-Gazebo/blob/master/ur5_mp.py
 
