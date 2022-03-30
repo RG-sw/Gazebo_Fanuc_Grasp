@@ -16,7 +16,7 @@ ROS/Gazebo simulation of a Fanuc Industrial Robot performing Pick&Place tasks:
 $ cd robot_ws
 $ catkin_make
 ```
-**To Run Palletizing simulation (standard boxes) :**
+**To Run Palletizing simulation :**
 ```
 $ roslaunch fanuc_r2000ic_moveit_config palletizzation.launch
 ```
@@ -77,7 +77,7 @@ https://github.com/Kinovarobotics/kinova-ros/issues/157
 - A ROS-based Workspace Control and Trajectory Planner for a Seven Degrees Of Freedom Robotic Arm https://amslaurea.unibo.it/10919/1/Alessandro_Santoni_Thesis_(abstract_ITA).pdf
 - NAVIGATION AND GRASPING WITH A MOBILE MANIPULATOR: FROM SIMULATION TO EXPERIMENTAL RESULTS http://tesi.cab.unipd.it/62262/1/matteo_iovino_tesi.pdf
 - Simultaneous localization and mapping: part I https://ieeexplore.ieee.org/document/1638022
-- Davide Scaramuzzo Zurich PHD https://ieeexplore.ieee.org/author/37397688400
+- Davide Scaramuzza Zurich PHD https://ieeexplore.ieee.org/author/37397688400
 - IEEE Robotics & Automation Magazine https://ieeexplore.ieee.org/xpl/topAccessedArticles.jsp?punumber=100
 - artificial intelligence in robotic palletization https://scholar.google.it/scholar?start=10&q=artificial+intelligence+in+robotic+palletization&hl=it&as_sdt=0,5&as_vis=1
 - Goole's RL https://github.com/google-research/ravens/tree/master/ravens
