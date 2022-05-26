@@ -1,3 +1,3 @@
 # Build Specific Folders
-robot_ws/src/build/
-robot_ws/src/devel/
+robot_ws/build/
+robot_ws/devel/
