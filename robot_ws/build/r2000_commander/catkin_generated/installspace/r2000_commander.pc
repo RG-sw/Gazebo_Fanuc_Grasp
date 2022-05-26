@@ -1,8 +1,0 @@
-prefix=/robot_ws/install
-
-Name: r2000_commander
-Description: Description of r2000_commander
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: moveit_ros_move_group moveit_ros_planning moveit_ros_planning_interface roscpp rospy std_msgs message_runtime
