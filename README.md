@@ -3,17 +3,40 @@ ROS/Gazebo simulation of a Fanuc Industrial Robot performing Pick&Place tasks:
 - packing boxes
 - OpenCV pipeline to autonomously detect and pick boxes 
 
+The code runs inside a Docker Container
+
 ## Dependencies
+- Docker
 - ROS Noetic
 - MoveIt! (for Noetic) 
 - Gazebo 11
 - Python 3.8.2
 - OpenCV
-- ros-gazebo, ros-control packages
+- ros-control
 
 ## Usage
 ```
-$ cd robot_ws
+$ git clone https://github.com/RG-sw/Gazebo_Fanuc_Grasp.git
+$ cd Gazebo_Fanuc_Grasp/robot_ws
+```
+Build Container & Run it
+```
+$ docker build -t fanuc_grasp .
+$ xhost +
+
+$ docker run -it \
+	  --rm \
+	  --privileged \
+    --net=host \
+    --device /dev/dri \
+    --env="DISPLAY" \
+    --env="QT_X11_NO_MITSHM=1" \
+    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+    fanuc_grasp \
+```
+Inside the container :
+```
+$ cd Gazebo_Fanuc_Grasp/robot_ws
 $ catkin_make
 ```
 **To Run Palletizing simulation :**
