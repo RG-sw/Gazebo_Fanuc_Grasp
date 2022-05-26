@@ -1,8 +1,0 @@
-prefix=/robot_ws/devel
-
-Name: r2000_description
-Description: Description of r2000_description
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

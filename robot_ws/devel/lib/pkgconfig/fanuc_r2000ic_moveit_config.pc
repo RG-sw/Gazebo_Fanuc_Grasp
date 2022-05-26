@@ -1,8 +1,0 @@
-prefix=/robot_ws/devel
-
-Name: fanuc_r2000ic_moveit_config
-Description: Description of fanuc_r2000ic_moveit_config
-Version: 0.3.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
