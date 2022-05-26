@@ -1,3 +1,3 @@
 # Build Specific Folders
-Gazebo_Fanuc_Grasp/robot_ws/build/
-Gazebo_Fanuc_Grasp/robot_ws/devel/
+Gazebo_Fanuc_Grasp/robot_ws/build
+Gazebo_Fanuc_Grasp/robot_ws/devel
