@@ -57,10 +57,6 @@ $ roslaunch fanuc_r2000ic_moveit_config opencv_palletizzation.launch
 
 <img src="https://user-images.githubusercontent.com/94836571/160488553-719cf833-3ae9-4b16-8820-0d4bbc835e15.gif" width="420">  <img src="https://user-images.githubusercontent.com/94836571/160489054-f064d3e8-9e44-41a7-a1ea-ed574ca3e625.gif" width="400">
 
-## TODO
-- [ ] Do dockerfile
-
-
 
 ## RESOURCES
 - example usage of xacro command (from xacro to urdf file) https://github.com/wrbernardoni/robot_tutorial_1/blob/master/scripts/play.sh
