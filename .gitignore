@@ -1,0 +1,5 @@
+# example to check : git check-ignore -v ~/Gazebo_Fanuc_Grasp/robot_ws/devel/
+
+# Build Specific Folders
+robot_ws/build
+robot_ws/devel
