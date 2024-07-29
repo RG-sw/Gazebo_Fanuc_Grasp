@@ -36,14 +36,10 @@ $ docker run -it \
 ```
 Inside the container :
 ```
-$ cd robot_ws
-$ catkin_make
-$ cd build
 $ source ../devel/setup.bash
 ```
 **To Run Palletizing simulation :**
 
-- Ensure you are in the `/build` directory
 ```
 $ roslaunch fanuc_r2000ic_moveit_config palletizzation.launch
 ```
