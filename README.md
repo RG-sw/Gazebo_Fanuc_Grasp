@@ -17,7 +17,7 @@ The code runs inside a Docker Container
 ## Usage
 ```
 $ git clone https://github.com/RG-sw/Gazebo_Fanuc_Grasp.git
-$ cd Gazebo_Fanuc_Grasp/robot_ws
+$ cd Gazebo_Fanuc_Grasp
 ```
 Build Container & Run it
 ```
@@ -36,10 +36,10 @@ $ docker run -it \
 ```
 Inside the container :
 ```
-$ cd Gazebo_Fanuc_Grasp/robot_ws
-$ catkin_make
+$ source ../devel/setup.bash
 ```
 **To Run Palletizing simulation :**
+
 ```
 $ roslaunch fanuc_r2000ic_moveit_config palletizzation.launch
 ```
